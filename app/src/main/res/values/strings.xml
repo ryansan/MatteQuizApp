@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MatteTest</string>
+    <string name="header">Bytt</string>
+    <string name="start">start</string>
+</resources>
