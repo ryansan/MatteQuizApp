@@ -17,11 +17,15 @@ public class StartActivity extends AppCompatActivity {
 
     public ArrayList<String> questions = new ArrayList<>();
     public ArrayList<Integer> answers = new ArrayList<>();
-    public int preferedAmount = 4;
+    public int preferedAmount = 5;
 
     public EditText editText;
     public TextView text;
     public int counter = 0;
+
+    public int correctCounter = 0;
+    public int wrongCounter = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,20 +45,28 @@ public class StartActivity extends AppCompatActivity {
                 if(Integer.valueOf(editText.getText().toString()) == answers.get(counter)){
                     Log.d("A:", "Correct");
                     Toast.makeText(StartActivity.this, "Correct", Toast.LENGTH_SHORT).show();
+                    correctCounter++;
                 }else{
                     Log.d("A:", "Wrong");
                     Toast.makeText(StartActivity.this, "WRONG!", Toast.LENGTH_SHORT).show();
+                    wrongCounter++;
                 }
 
-                if(counter == preferedAmount){
-                    Toast.makeText(StartActivity.this, "Du er ferdig!", Toast.LENGTH_SHORT).show();
+                Log.d("Counter:", String.valueOf(counter));
+                Log.d("Pref amount:", String.valueOf(preferedAmount));
+                Log.d("Len:", String.valueOf(questions.size()));
+                //if all questions have been shown, end game
+                if(counter == questions.size()-1){
+                    Log.d("FIN", "FINISHED");
+                    int total = questions.size()-wrongCounter;
+                    Toast.makeText(StartActivity.this, "Du er ferdig! Du klarte " + total
+                                    + " av " + questions.size() + " spørsmål!"
+                            , Toast.LENGTH_SHORT).show();
+                }else{
+                    //increase counter and set next question
+                    counter++;
+                    text.setText(questions.get(counter));
                 }
-
-                //increase counter and set next question
-                counter++;
-                text.setText(questions.get(counter));
-
-                //test if answer is correct
             }
         });
 
@@ -78,5 +90,6 @@ public class StartActivity extends AppCompatActivity {
             Log.d("q", questions.get(i));
             Log.d("a", String.valueOf(answers.get(i)));
         }
+        Log.d("Size: ", String.valueOf(questions.size()));
     }
 }
