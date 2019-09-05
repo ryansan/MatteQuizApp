@@ -2,4 +2,7 @@
     <string name="app_name">MatteTest</string>
     <string name="header">Bytt</string>
     <string name="start">start</string>
+    <string name="pref">Preferanser</string>
+    <string name="NumberOfQuestions">Antall spørsmål</string>
+    <string name="velgSpraak">Velg språk</string>
 </resources>

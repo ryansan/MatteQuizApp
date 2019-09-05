@@ -8,9 +8,16 @@
         android:layout_height="wrap_content"
         android:text="@string/header" />
     <Button
-        android:id="@+id/start"
+    android:id="@+id/start"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/start"/>
+
+    <Button
+        android:id="@+id/pref"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/start"/>
+        android:text="@string/pref"/>
+
 
 </LinearLayout>

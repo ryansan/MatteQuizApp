@@ -28,5 +28,14 @@ public class MainActivity extends AppCompatActivity {
                 //startActivity(new Intent(MainActivity.this,StartActivity.class));
             }
         });
+
+        final Button btnPref = findViewById(R.id.pref);
+        btnPref.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, PreferenceActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

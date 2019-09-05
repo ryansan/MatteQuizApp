@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MatteTesten</string>
+    <string name="header">Bytten bleips sizzen</string>
+    <string name="start">guten tag DE</string>
+    <string name="pref">PREF in deutche</string>
+    <string name="NumberOfQuestions">nummer queztionnes</string>
+    <string name="velgSpraak">bitte spraakkeen</string>
+</resources>
